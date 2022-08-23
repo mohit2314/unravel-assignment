@@ -1,0 +1,75 @@
+{
+    "columns":[
+        {
+            "label":"Name",
+            "info":""
+        },
+        {
+            "label":"Description",
+            "info":""
+        },
+        {
+            "label":"Type",
+            "info":""
+        },
+        {
+            "label":"Period",
+            "info":""
+        },
+        {
+            "label":"Start",
+            "info":""
+        },
+        {
+            "label":"End",
+            "info":""
+        },
+        {
+            "label":"Scope",
+            "info":""
+        },
+        {
+            "label":"Budget Status",
+            "info":"This is budget status for year 2021-2022"
+        },
+        {
+            "label":"",
+            "info":""
+        },
+        {
+            "label":"Actions",
+            "info":""
+        }
+    ],
+
+    "rows":[
+        {
+            "name":"",
+            "description":"",
+            "type":"",
+            "period":"",
+            "start":"",
+            "end":"",
+            "scope":"",
+            "budget_status":
+            {
+                "percentage":9,
+                "cost":"",
+                "budget":""
+            },
+            "summary":{
+                "status":"OK",
+                "comments":""
+            },
+            "actions":["Trends","Chargeback","optimize"],
+            "row_actions":{
+                "edit":true,
+                "delete":true
+
+            }
+                
+
+            
+        }
+    ]
+}

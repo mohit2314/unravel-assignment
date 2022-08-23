@@ -1,5 +1,6 @@
 <template>
   <div class="page__container">
+    <!-- utility bar section  -->
     <div class="header__row">
       <div class="new__budget__cta">New Budget</div>
       <div class="search__bar">
@@ -57,6 +58,13 @@ export default {
 
   .main__table__section {
     background-color: #f5f7fa;
+
+    .section__header{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+    }
   }
 }
 </style>
