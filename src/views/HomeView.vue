@@ -12,16 +12,20 @@
       <div class="section__header">
         <span>Active</span><span><i class="light-icon-info-circle"></i></span>
       </div>
+      <!-- Table -->
+      <TableComponent />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import TableComponent from "@/components/TableComponent.vue"
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    TableComponent
+  },
 };
 </script>
 
