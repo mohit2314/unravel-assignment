@@ -23,7 +23,7 @@
           <td colspan="3">
             <template >
               <tr>
-                <td colspan="3">{{ row.budget_status.percentage }}</td>
+                <td colspan="3"><ProgressBar :progressPercentage="row.budget_status.percentage"/> </td>
               </tr>
               <tr >
                 <td colspan="3">{{ row.budget_status.cost }}</td>
@@ -66,6 +66,7 @@
 <script>
 import sampleData from "@/sample-data/sampleData.json";
 import TagComponent from "@/components/TagComponent.vue";
+import ProgressBar from "@/components/ProgressBar.vue";
 export default {
   data() {
     return {
@@ -73,7 +74,8 @@ export default {
     };
   },
   components:{
-    TagComponent
+    TagComponent,
+    ProgressBar
   }
 };
 </script>
