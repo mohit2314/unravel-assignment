@@ -62,7 +62,7 @@
                 "budget":"50000 DBUs"
             },
             "summary":{
-                "status":"OK",
+                "status":"Ok",
                 "comments":"Cost is projected to be within the budget when this period ends on 04/01/2022 00:00:00 UTC,with a forcasted cost of 11085.1 DBUs"
             },
             "actions":["Trends","Chargeback","optimize"],

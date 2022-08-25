@@ -5,7 +5,7 @@
       <tr class="table__header-row">
         <th colspan="3" v-for="(col, i) in tabularData.columns" :key="i">
           <span>{{ col.label }}</span
-          ><span v-if="col.info"><i class="light-icon-info-circle"></i></span>
+          ><span v-if="col.info" ><i class="light-icon-info-circle"></i></span>
         </th>
       </tr>
       <!-- Table body -->
@@ -21,41 +21,54 @@
           <!-- Budget Column -->
           <!-- <td v-for="item of row.budget_status">{{item}}</td> -->
           <td colspan="3">
-            <template >
-              <tr>
-                <td colspan="3"><ProgressBar :progressPercentage="row.budget_status.percentage"/> </td>
-              </tr>
-              <tr >
-                <td colspan="3">{{ row.budget_status.cost }}</td>
-              </tr>
-              <tr >
-                <td colspan="3">{{ row.budget_status.budget }}</td>
-              </tr>
-            </template>
+            <div class="budget__status__col">
+              <div>
+                <span
+                  ><ProgressBar
+                    :progressPercentage="row.budget_status.percentage"
+                  />
+                </span>
+              </div>
+              <div>
+                <span colspan="3">{{ row.budget_status.cost }}</span>
+              </div>
+              <div>
+                <span colspan="3">{{ row.budget_status.budget }}</span>
+              </div>
+            </div>
           </td>
 
           <td colspan="3">
-            <tr>
-                <td>{{row.summary.status}}</td>
-            </tr>
-            <tr>
-                <td>{{row.summary.comments}}</td>
-            </tr>
+            <div class="budget__status__col">
+              <div>
+                <span style="font-weight: 600"> {{ row.summary.status }}</span>
+              </div>
+              <div>
+                <span>{{ row.summary.comments }}</span>
+              </div>
+            </div>
           </td>
           <!-- Actions -->
-<td colspan="3">
-            <tr>
-                <td><TagComponent :value="row.actions[0]"/></td>
-            </tr>
-            <tr>
-                <td><TagComponent :value="row.actions[1]"/></td>
-            </tr>
-            <tr>
-                <td><TagComponent :value="row.actions[2]"/></td>
-            </tr>
+          <td colspan="3">
+            <div class="budget__status__col">
+              <div>
+                <span><TagComponent :value="row.actions[0]" /></span>
+              </div>
+              <div>
+                <span><TagComponent :value="row.actions[1]" /></span>
+              </div>
+              <div>
+                <span><TagComponent :value="row.actions[2]" /></span>
+              </div>
+            </div>
           </td>
           <!-- Edit & Delete option -->
-          <td colspan="2"><span><i class="light-icon-pencil"></i></span><span><i class="light-icon-trash"></i></span></td>
+          <td colspan="2">
+            <div class="actions__col">
+              <span><i class="light-icon-pencil"></i></span
+              ><span><i class="light-icon-trash"></i></span>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -73,38 +86,58 @@ export default {
       tabularData: sampleData,
     };
   },
-  components:{
+  components: {
     TagComponent,
-    ProgressBar
-  }
+    ProgressBar,
+  },
 };
 </script>
 
 <style lang='scss'>
-
-table, tr, td,th{
-border: none;
- border-collapse: collapse;
+table,
+tr,
+td,
+th {
+  border: none;
+  border-collapse: collapse;
 }
-table{
-padding: 8px;
+table {
+  padding: 8px;
 
-
-.table__header-row {
-  //   display: flex;
-  //   align-items: center;
-  background-color: #EAEEF4;
-  th {
-    text-align: left;
+  .table__header-row {
+    //   display: flex;
+    //   align-items: center;
+    background-color: #eaeef4;
+    th {
+      text-align: left;
+      padding: 16px;
+    }
   }
-}
 
-.table__body {
+  .table__body {
     background-color: #fff;
-  td {
-    text-align: left;
+    tr {
+      td {
+        padding: 12px;
+        border-bottom: 1px solid lightgray;
+      }
+    }
+    .budget__status__col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .actions__col {
+      display: flex;
+      gap: 12px;
+      font-weight: 600;
+      span {
+        cursor: pointer;
+      }
+    }
+    td {
+      text-align: left;
+    }
   }
 }
-}
-
 </style>
