@@ -62,6 +62,7 @@ export default {
 
   .main__table__section {
     background-color: #f5f7fa;
+    padding: 12px;
 
     .section__header{
       display: flex;
